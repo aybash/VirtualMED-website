@@ -1,0 +1,319 @@
+
+
+body{
+font-family: 'sans-serif',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e0e1dd;
+    box-sizing: border-box;
+    margin:0;
+}
+#nav-container{
+    display:flex;
+    flex-flow:row wrap;
+    width:98%;
+    justify-content: space-between;
+    background-color: #1450a3;
+    padding:15px;
+  
+}
+
+#logo{
+    flex: 1 0 0;
+    font-weight: bolder;
+    margin: 18px;
+}
+
+.link{
+    text-align: center;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    margin:18px;
+    
+}
+
+.link:hover{
+ color:dodgerblue;
+}
+
+img{
+    width:100%;
+    height:450px;
+    
+
+}
+
+#main-container
+{
+    display:flex;
+    gap:40px;
+    
+}
+
+aside{
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+    background-color:   #1450a3;
+}
+
+aside a {
+    color:#fff;
+    text-decoration: none;
+
+}
+
+aside a:hover{
+    color:#548dc0;
+}
+aside a:active{
+    color:red;
+}
+
+#sidebar-pic {
+
+    width:300px;
+    height:400px;
+}
+
+#sub-container{
+    display: flex;
+    gap:60px;
+    justify-content: center;
+    flex-direction: row wrap;
+}
+
+#sub-container div {background-color:#1450a3;
+border-radius: 5px;
+color:#fff;}
+
+#sub-container div:nth-child(2){
+    background-color: #3fa2f6;
+    
+}
+
+.card-image{
+    width:70px;
+    height:60px;
+
+}
+
+.service-card{
+    padding:20px;
+}
+#detailed-info{
+   
+    flex: 1 0 0;
+    padding: 40px;
+    width:300px;
+    
+}
+
+#detailed-info > h2 {
+    text-align: center;
+}
+
+#About {
+    margin-top: 80px;
+}
+#About > h2 {
+    text-align:center;
+    
+}
+
+
+#header{
+    display:flex;
+    flex-direction: column wrap;
+    justify-content: center;
+background-image: url('../images/patient.jpg');
+background-repeat: no-repeat;
+background-size:100vw 90vh;
+background-position: center;
+height: 600px;
+
+
+}
+
+#header div{
+    text-align: center;
+    align-self: center;
+    
+}
+
+.learn-more{
+    background-color :rgb(14, 72, 197);
+    padding:10px;
+    color: beige;
+    text-decoration: none;
+    
+}
+
+.greet{
+    color:#22282c;
+    font-size: 70px;
+    text-shadow: 2px 2px ;
+  
+}
+
+.motto {
+    font-size: 20px;
+    font-style: italic;
+}
+
+#clinic-offers {
+    display: flex;
+    justify-content: center;
+    flex-direction: row wrap;
+    gap:40px;
+    margin-top:50px;
+
+}
+
+.mission{
+    font-weight: bold;
+    font-size:1rem;
+}
+
+#vision-info{
+    line-height: 2em;
+}
+
+#medicare {
+color:rgb(45, 30, 255);
+background-color: #9fc1ff;
+padding: 10px;
+}
+
+.check{
+    width:12px;
+    height:12px;
+}
+.read-more{padding:20px;
+ color:#fff;
+background-color: rgb(14, 72, 197);}
+
+
+
+/*form styles*/
+form{
+    margin-top: 90px;;
+}
+fieldset {
+    width:300px;
+    color: #fff;
+    font-weight: bold;
+}
+
+textarea{
+    width:200px;
+    height:200px;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #1da1f2; /* Light blue for Twitter-like hover effect */
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    .footer-content {
+        font-size: 14px;
+    }
+
+    .social-links a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    aside{
+        padding: 20px;
+    display: flex;
+        gap:15px;
+        background-color:   #1450a3;
+    
+    }
+
+    
+    #mobile-sidebar{
+      
+        display: none;
+            
+    }
+
+
+}
+
+@media (max-width:586px){
+
+    #nav-container{
+        flex-direction:column;
+        
+    }
+
+    #logo{
+        align-self: center;
+    }
+
+    aside{
+        padding: 20px;
+    display: none;
+        gap:15px;
+        background-color:   #1450a3;
+    
+    }
+
+    #mobile-sidebar{
+        padding: 20px;
+        display: flex;
+            gap:15px;
+            background-color:   #1450a3;
+            flex-direction: column;
+            justify-items: center;
+    }
+
+    #sub-container{
+        display: flex;
+        gap:60px;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    #clinic-offers {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap:40px;
+        margin-top:50px;
+    
+    }
+   
+}
+

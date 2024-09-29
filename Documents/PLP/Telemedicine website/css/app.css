@@ -1,0 +1,130 @@
+body{
+    background-color:  rgb(14, 72, 197);
+    display:flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#form-container{
+    background-color: #fff;
+    width:100%;
+    padding: 15px 25px;
+    max-width: 960px;
+    display:flex;
+    flex-direction: column;
+ align-items: center;
+    border-radius: 5px;   
+    
+}
+#logo {
+    
+    color:rgb(14, 72, 197);
+    font-weight: bolder;
+}
+
+.photo{
+    max-width:100%;
+}
+
+.input-size{
+    margin: 10px 0;
+    tab-size: 50px;
+    width:100%;
+}
+#form-title {
+    color:rgb(14, 72, 197);
+    font-weight: bold;
+}
+
+#submit-button{
+    background-color: rgb(14, 72, 197);
+    padding:10px;
+    color:#fff;
+    margin:10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+.link{
+    text-decoration: none;
+    cursor: pointer;
+}
+.social-icon{
+    width:30px;
+    height:30px;
+    margin: 10px 10px;
+}
+
+
+@media (min-width:768px){
+
+    #form-container{
+        background-color: #fff;
+        width:100%;
+        padding: 15px 25px;
+        max-width: 960px;
+        display:flex;
+        flex-direction:row;
+     align-items: center;
+        border-radius: 5px;   
+        
+    }
+
+#logo {
+    
+    align-self:flex-start;
+    color:rgb(14, 72, 197);
+    font-weight: bolder;
+}
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
