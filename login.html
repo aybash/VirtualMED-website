@@ -5,45 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/app.css">
     <title>Sign-up</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
-   
     <div id="form-container">
         <div id="logo">VirtualMED</div>
         <div><img src="./images/photo.png" class="photo"></div>
         <div>
-            <form action="#" method="post">
+            <form id="signupForm" action="#" method="post">
                 <fieldset>
                     <legend id="form-title">Create Account</legend> <br>
-               
-                <label for="name">First Name</label> <br>
-                <input type="text" name="fname" placeholder="Full name" class="input-size"> <br>
-                <label for="name">Last Name</label> <br>
-                <input type="text" name="lname" placeholder="Last name" class="input-size"> <br>
-               <label for="email">Email</label><br>
-                <input type="email" placeholder="Email" class="input-size"><br>
-                <label for="password">Password</label><br>
-                <input type="password" placeholder="password" class="input-size"><br>
-                <label for="password">Retype-Password</label><br>
-                <input type="password" placeholder="password" class="input-size"><br>
-                <input type="checkbox"> I agree to the <a href="#" class="link" target="_blank">terms of services</a> and <a href="#" class="link" target="_blank">privacy policy</a> <br>
-                <button id="submit-button">submit</button>
-                <p>Or Sign Up With</p>
 
-                 <div>
-                   <a href="#" class="link"><img src="./images/google.png" class="social-icon"></a>
-                   <a href="#" class="link"> <img src="./images/facebook.png" class="social-icon"></a>
-                   <a href="#" class="link"> <img src="./images/twitter.png" class="social-icon"></a>
-                   <a href="#" class="link"> <img src="./images/instagram.png" class="social-icon"></a>
-                   <a href="#" class="link"> <img src="./images/linkedin.png" class="social-icon"></a>
-                 </div>
-                 <div>
-                    <p>Already have an account? <a href="#" class="link">Sign in</a></p>
-                 </div>
-            </fieldset>
+                    <label for="fname">First Name</label> <br>
+                    <input type="text" name="fname" placeholder="First name" class="input-size">
+                    <span class="error" id="fnameError"></span><br>
+
+                    <label for="lname">Last Name</label> <br>
+                    <input type="text" name="lname" placeholder="Last name" class="input-size">
+                    <span class="error" id="lnameError"></span><br>
+
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" placeholder="Email" class="input-size">
+                    <span class="error" id="emailError"></span><br>
+
+                    <label for="age">Age</label><br>
+                    <input type="number" name="age">
+                    <span class="error" id="ageError"></span><br><br>
+
+                    <label for="countries"> Country</label>
+                <select id="countries" name="countries"></select><br>
+
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" value="Male" name="gender"> Male
+                    <input type="radio" value="Female" name="gender"> Female
+                    <input type="radio" value="Others" name="gender"> Others<br><br>
+
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" placeholder="Password" class="input-size">
+                    <span class="error" id="passwordError"></span><br>
+
+                    <label for="confirmPassword">Retype-Password</label><br>
+                    <input type="password" name="confirmPassword" placeholder="Retype password" class="input-size">
+                    <span class="error" id="confirmPasswordError"></span><br>
+
+                    <input type="checkbox" id="terms"> I agree to the <a href="#" class="link" target="_blank">terms of services</a> and <a href="#" class="link" target="_blank">privacy policy</a>
+                    <span class="error" id="termsError">*</span><br>
+
+                    <button type="submit" id="submit-button">Submit</button>
+                    <p>Or Sign Up With</p>
+
+                    <div>
+                        <a href="#" class="link"><img src="./images/google.png" class="social-icon"></a>
+                        <a href="#" class="link"> <img src="./images/facebook.png" class="social-icon"></a>
+                        <a href="#" class="link"> <img src="./images/twitter.png" class="social-icon"></a>
+                        <a href="#" class="link"> <img src="./images/instagram.png" class="social-icon"></a>
+                        <a href="#" class="link"> <img src="./images/linkedin.png" class="social-icon"></a>
+                    </div>
+                    <div>
+                        <p>Already have an account? <a href="#" class="link">Sign in</a></p>
+                    </div>
+                </fieldset>
             </form>
         </div>
     </div>
-    
+
+    <script src="script.js"></script>
 </body>
 </html>
