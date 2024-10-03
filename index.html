@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Telemedicine website/css/style.css">
+    <link rel="stylesheet" href="../VirtualMED-website/css/style.css">
     <meta name="Description" content=" telemedicine , medical care, virtual med care">
     <meta name="keyword" content="telemedicine, virtual care, remote medical care, virtual medicine, remote hospital, remote doctors">
     <meta name="author" content="Bashiru Akintayo">
@@ -11,6 +11,7 @@
 </head>
 <body>
  <!--navigation bar-->
+ <div class="menu-toggle" id="menu-toggle" onclick="toggleMenu()">&#9776;</div>  
         <nav id="nav-container">
             <div id="logo"><a href="logo" class="link">VirtualMED</a></div>
             <a href="#home" class="link">Home</a>
@@ -116,7 +117,7 @@
 <!--offers section-->
  <section id="clinic-offers">
     <div class="offers-content">
-        <img src="../Telemedicine website/images/patient2.jpg">
+        <img src="../VirtualMED-website/images/patient2.jpg">
     </div>
     <div class="offers-content">
         <h5> <span id="medicare">Medicare</span></h5>
@@ -183,6 +184,11 @@
         
     </footer>
 
-    
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("nav-container");
+            nav.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>

@@ -16,6 +16,15 @@ font-family: 'sans-serif',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe U
   
 }
 
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color:#000;
+    font-size: 30px;
+}
+
+
+
 #logo{
     flex: 1 0 0;
     font-weight: bolder;
@@ -192,7 +201,11 @@ padding: 10px;
  color:#fff;
 background-color: rgb(14, 72, 197);}
 
-
+#mobile-sidebar{
+      
+    display: none;
+        
+}
 
 /*form styles*/
 form{
@@ -243,7 +256,7 @@ textarea{
 }
 
 /* Responsive design */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .footer-content {
         font-size: 14px;
     }
@@ -260,7 +273,7 @@ textarea{
         background-color:   #1450a3;
     
     }
-
+   
     
     #mobile-sidebar{
       
@@ -268,14 +281,85 @@ textarea{
             
     }
 
+    #nav-container a {
+        display: none;
+    }
+    #nav-container {
+        display: none;
+        flex-direction: column;
+    }
+
+    #nav-container.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    #nav-container.active a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    /* Make sure logo is always visible */
+    #logo {
+        order: -1;
+    }
+
+    #sub-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #About {
+        padding: 20px 10px;
+    }
+
+    article {
+        padding: 0 10px;
+    }
 
 }
 
-@media (max-width:586px){
 
-    #nav-container{
-        flex-direction:column;
-        
+@media (max-width:586px){
+   
+   
+    #nav-container {
+        display:column;
+    }
+    .menu-toggle {
+        font-size: 24px;
+    }
+
+    #nav-container a {
+        display: none;
+    }
+    #nav-container {
+        display: none;
+        flex-direction: column;
+    }
+
+    #nav-container.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    #nav-container.active a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    /* Make sure logo is always visible */
+    #logo {
+        order: -1;
     }
 
     #logo{

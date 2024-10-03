@@ -1,6 +1,12 @@
 
+
+
+
 document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
     let hasError = false;
+    const formData = {}; // Object to store form data
 
     // Clear previous error messages
     document.querySelectorAll('.error').forEach(function(el) {
@@ -12,6 +18,8 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     if (fname === '') {
         document.getElementById('fnameError').textContent = 'First name is required';
         hasError = true;
+    } else {
+        formData.firstName = fname;
     }
 
     // Last Name Validation
@@ -19,6 +27,8 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     if (lname === '') {
         document.getElementById('lnameError').textContent = 'Last name is required';
         hasError = true;
+    } else {
+        formData.lastName = lname;
     }
 
     // Email Validation
@@ -30,6 +40,8 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     } else if (!emailPattern.test(email)) {
         document.getElementById('emailError').textContent = 'Invalid email format';
         hasError = true;
+    } else {
+        formData.email = email;
     }
 
     // Age Validation
@@ -40,11 +52,22 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     } else if (isNaN(age) || age < 18 || age > 100) {
         document.getElementById('ageError').textContent = 'Age must be between 18 and 100';
         hasError = true;
+    } else {
+        formData.age = age;
+    }
+
+    // Gender Validation
+    const gender = document.querySelector('input[name="gender"]:checked');
+    if (!gender) {
+        document.getElementById('genderLabel').textContent = 'Please select your gender';
+        hasError = true;
+    } else {
+        formData.gender = gender.value;
     }
 
     // Password Validation
-    const password = document.querySelector('input[type="password"]').value;
-    const confirmPassword = document.querySelectorAll('input[type="password"]')[1].value;
+    const password = document.querySelector('input[name="password"]').value;
+    const confirmPassword = document.querySelector('input[name="confirmPassword"]').value;
 
     if (password === '') {
         document.getElementById('passwordError').textContent = 'Password is required';
@@ -54,7 +77,6 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
         hasError = true;
     }
 
-    // Confirm Password Validation
     if (confirmPassword === '') {
         document.getElementById('confirmPasswordError').textContent = 'Please confirm your password';
         hasError = true;
@@ -63,16 +85,44 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
         hasError = true;
     }
 
-    // Terms and Conditions Checkbox Validation
+    // Terms and Conditions Validation
     const termsChecked = document.getElementById('terms').checked;
     if (!termsChecked) {
         document.getElementById('termsError').textContent = 'You must agree to the terms';
         hasError = true;
     }
 
-    // Prevent form submission if there are errors
-    if (hasError) {
-        event.preventDefault();
+    // If no errors, process the form data
+    if (!hasError) {
+        formData.password = password;
+
+        // Display Success Message
+        const successMessage = 'Form submitted successfully!';
+        alert(successMessage);
+
+        // Display Form Summary
+        displaySummary(formData);
+    }
+});
+
+function displaySummary(formData) {
+    const summaryContent = document.getElementById('summaryContent');
+    summaryContent.innerHTML = `
+        <strong>First Name:</strong> ${formData.firstName} <br>
+        <strong>Last Name:</strong> ${formData.lastName} <br>
+        <strong>Email:</strong> ${formData.email} <br>
+        <strong>Age:</strong> ${formData.age} <br>
+        <strong>Gender:</strong> ${formData.gender} <br>
+    `;
+}
+
+// Real-time validation for email
+document.querySelector('input[name="email"]').addEventListener('input', function() {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(this.value)) {
+        document.getElementById('emailError').textContent = 'Invalid email format';
+    } else {
+        document.getElementById('emailError').textContent = '';
     }
 });
 
@@ -116,3 +166,7 @@ countries.forEach(country => {
     option.textContent = country;
     select.appendChild(option);
 });
+
+
+
+
