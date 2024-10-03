@@ -4,7 +4,9 @@ body{
     justify-content: center;
     min-height: 100vh;
 }
-
+a{
+    color:blue;
+}
 #form-container{
     background-color: #fff;
     width:100%;
